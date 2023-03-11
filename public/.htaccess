@@ -5,6 +5,14 @@
 
     RewriteEngine On
 
+    # # 追加ここから
+    # <IfModule mod_negotiation.c>
+    #     RewriteEngine On
+    #     RewriteRule ^(.*)$ pianolog/$1 [QSA,L]
+    # </IfModule>
+    # # 追加ここまで
+
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
